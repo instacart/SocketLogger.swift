@@ -8,29 +8,34 @@
 
 import CocoaAsyncSocket
 
-struct LogDetails {
-    let date: NSDate
-    let programName: String
+public struct LogDetails {
+    public let date: NSDate
+    public let programName: String
+
+    public init(date: NSDate, programName: String) {
+        self.date = date
+        self.programName = programName
+    }
 }
 
 /// A logging interface to socket-based providers, e.g. Papertrail, Loggly.
-final class SocketLogger: NSObject {
-    let useTLS: Bool
-    let host: String
-    let port: UInt16
-    let senderName: String
-    let token: String?
+public final class SocketLogger: NSObject {
+    public let useTLS: Bool
+    public let host: String
+    public let port: Int
+    public let senderName: String
+    public let token: String?
 
-    static func papertrail(senderName senderName: String) -> SocketLogger {
+    public static func papertrail(senderName senderName: String) -> SocketLogger {
         return .init(host: "logs.papertrailapp.com", port: 46865, senderName: senderName)
     }
 
-    static func loggly(senderName senderName: String, token: String) -> SocketLogger {
+    public static func loggly(senderName senderName: String, token: String) -> SocketLogger {
         let token = "\(token)@41058"
         return .init(host: "logs-01.loggly.com", port: 6514, senderName: senderName, token: token)
     }
 
-    init(host: String, port: UInt16, useTLS: Bool = true, senderName: String, token: String? = nil) {
+    public init(host: String, port: Int, useTLS: Bool = true, senderName: String, token: String? = nil) {
         self.host = host
         self.port = port
         self.useTLS = useTLS
@@ -39,7 +44,7 @@ final class SocketLogger: NSObject {
         messageQueue = dispatch_queue_create("\(messageQueueID).\(host)", DISPATCH_QUEUE_SERIAL)
     }
 
-    func log(details details: LogDetails, message: String) {
+    public func log(details details: LogDetails, message: String) {
         dispatch_async(messageQueue) {
             self.enqueueLog(details: details, message: message)
         }
@@ -47,7 +52,7 @@ final class SocketLogger: NSObject {
 
     private let messageQueue: dispatch_queue_t
     private var enqueuedLogs: [String] = []
-    private lazy var tcpSocket: GCDAsyncSocket = GCDAsyncSocket(delegate: self, delegateQueue: self.messageQueue)
+    private lazy var tcpSocket: GCDAsyncSocket = .init(delegate: self, delegateQueue: self.messageQueue)
     private lazy var dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
         let posixLocale = NSLocale(localeIdentifier: posixLocaleID)
@@ -93,7 +98,7 @@ final class SocketLogger: NSObject {
 
     private func connectToHost() {
         do {
-            try tcpSocket.connectToHost(host, onPort: port)
+            try tcpSocket.connectToHost(host, onPort: UInt16(port))
             if useTLS {
                 tcpSocket.startTLS(nil)
             }
