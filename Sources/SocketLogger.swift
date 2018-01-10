@@ -1,6 +1,6 @@
 //
 //  SocketLogger.swift
-//  InstaShopper
+//  SocketLogger
 //
 //  Created by Jason Kozemczak on 7/20/16.
 //  Copyright © 2016 Instacart. All rights reserved.
@@ -8,64 +8,160 @@
 
 import CocoaAsyncSocket
 
-public struct LogDetails {
-    public let date: Date
-    public let programName: String
+// From https://en.wikipedia.org/wiki/Syslog#Severity_level
+public enum SyslogSeverity: Int {
+    case emergency = 0
+    case alert
+    case critical
+    case error
+    case warning
+    case notice
+    case info
+    case debug
+}
 
-    public init(date: Date, programName: String) {
-        self.date = date
-        self.programName = programName
+// From https://en.wikipedia.org/wiki/Syslog#Facility
+public enum SyslogFacility: Int {
+    case kernel = 0
+    case user
+    case mail
+    case daemon
+    case auth
+    case syslog
+    case lpr
+    case news
+    case uucp
+    case clock
+    case authpriv
+    case ftp
+    case ntp
+    case audit
+    case alert
+    case cron
+    case local0
+    case local1
+    case local2
+    case local3
+    case local4
+    case local5
+    case local6
+    case local7
+}
+
+public struct SocketLogDetails {
+    let priority: Int
+    let date: Date
+    let hostname: String
+    let application: String
+    let pid: Int?
+    let messageID: Int?
+    let headers: [String]
+}
+
+public extension SocketLogDetails {
+    init(severity: SyslogSeverity = .info,
+         facility: SyslogFacility = .user,
+         date: Date,
+         hostname: String,
+         application: String,
+         pid: Int? = nil,
+         messageID: Int? = nil,
+         headers: [String] = []) {
+        self.init(priority: severity.rawValue + facility.rawValue * 8,
+                  date: date,
+                  hostname: hostname,
+                  application: application,
+                  pid: pid,
+                  messageID: messageID,
+                  headers: headers)
     }
 }
 
-/// A logging interface to socket-based providers, e.g. Papertrail, Loggly.
-public final class SocketLogger: NSObject {
-    public let useTLS: Bool
-    public let host: String
-    public let port: Int
-    public let senderName: String
-    public let token: String?
+// MARK: - SocketLogger
+// - A syslog interface for socket-based providers, e.g. Papertrail, Loggly, LogDNA.
+public final class SocketLogger {
+    let host: String
+    let port: Int
+    let useTLS: Bool
+    let token: String
 
-    public static func papertrail(senderName: String) -> SocketLogger {
-        return .init(host: "logs.papertrailapp.com", port: 46865, senderName: senderName)
+    public static var papertrail: SocketLogger { return .init(host: "logs.papertrailapp.com", port: 46865) }
+    public static func loggly(token: String) -> SocketLogger {
+        return .init(host: "logs-01.loggly.com", port: 6514, token: "\(token)@41058")
     }
 
-    public static func loggly(senderName: String, token: String) -> SocketLogger {
-        let token = "\(token)@41058"
-        return .init(host: "logs-01.loggly.com", port: 6514, senderName: senderName, token: token)
+    public static func logDNA(token: String, port: Int) -> SocketLogger {
+        return .init(host: "syslog-a.logdna.com", port: port, token: "logdna@48950 key=\"\(token)\"")
     }
 
-    public init(host: String, port: Int, useTLS: Bool = true, senderName: String, token: String? = nil) {
+    public init(host: String, port: Int, useTLS: Bool = true, token: String = "") {
         self.host = host
         self.port = port
         self.useTLS = useTLS
-        self.senderName = senderName
         self.token = token
         messageQueue = DispatchQueue(label: "\(messageQueueID).\(host)", attributes: [])
     }
 
-    public func log(details: LogDetails, message: String) {
+    public func log(details: SocketLogDetails, message: String) {
         messageQueue.async {
             self.enqueueLog(details: details, message: message)
         }
     }
 
     private let messageQueue: DispatchQueue
-    private var enqueuedLogs: [String] = []
-    private lazy var tcpSocket: GCDAsyncSocket = .init(delegate: self, delegateQueue: self.messageQueue)
+    private var enqueuedLogs: [Data] = []
+    private var isWriting: Bool = false
+    private lazy var tcpSocket: GCDAsyncSocket = .init(delegate: self.socketProxy, delegateQueue: self.messageQueue)
+    private lazy var socketProxy: SocketProxy = {
+        let proxy = SocketProxy()
+        proxy.socketDidDisconnectCallback = { [unowned self] _, _ in
+            self.isWriting = false
+        }
+        proxy.socketDidWriteDataWithTagCallback = { [unowned self] _, tag in
+            guard tag == writerTag, self.isWriting else { return }
+            self.isWriting = false
+            self.writeLogs()
+        }
+        return proxy
+    }()
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        let posixLocale = Locale(identifier: posixLocaleID)
-        formatter.locale = posixLocale
+        formatter.locale = Locale(identifier: posixLocaleID)
         formatter.timeZone = TimeZone(abbreviation: "PST")
         formatter.dateFormat = defaultDateFormat
         return formatter
     }()
+}
 
-    private func enqueueLog(details: LogDetails, message: String) {
+private final class SocketProxy: NSObject {
+    var socketDidDisconnectCallback: ((GCDAsyncSocket, Error?) -> Void)?
+    var socketDidWriteDataWithTagCallback: ((GCDAsyncSocket, Int) ->Void)?
+}
+
+extension SocketProxy: GCDAsyncSocketDelegate {
+    func socketDidDisconnect(_ socket: GCDAsyncSocket, withError error: Error?) {
+        socketDidDisconnectCallback?(socket, error)
+    }
+
+    func socket(_ socket: GCDAsyncSocket, didWriteDataWithTag tag: Int) {
+        socketDidWriteDataWithTagCallback?(socket, tag)
+    }
+}
+
+private extension SocketLogDetails {
+    func prefix(withFormatter dateFormatter: DateFormatter) -> String {
+        let formattedPID: String = pid.flatMap(String.init) ?? "-"
+        let formattedMessageID: String = messageID.flatMap(String.init) ?? "-"
+        return "<\(priority)>1 \(dateFormatter.string(from: date)) \(hostname) \(application) \(formattedPID) " +
+               "\(formattedMessageID)"
+    }
+}
+
+private extension SocketLogger {
+    func enqueueLog(details: SocketLogDetails, message: String) {
         let msg = formatted(details: details, message: message)
-        if !msg.isEmpty {
-            enqueuedLogs.append(msg)
+        if let data = msg.data(using: .utf8), !msg.isEmpty, !data.isEmpty {
+            enqueuedLogs.append(data)
         }
         if tcpSocket.isDisconnected {
             connectToHost()
@@ -74,29 +170,27 @@ public final class SocketLogger: NSObject {
         }
     }
 
-    private func writeLogs() {
-        guard tcpSocket.isConnected else { return }
-        while let msg = enqueuedLogs.first {
-            if let data = msg.data(using: .utf8) {
-                tcpSocket.write(data, withTimeout: -1, tag: 1)
-            }
-            enqueuedLogs.removeFirst()
-        }
+    func writeLogs() {
+        guard let msg = enqueuedLogs.first, tcpSocket.isConnected, !isWriting else { return }
+        isWriting = true
+        enqueuedLogs.removeFirst()
+        tcpSocket.write(msg, withTimeout: -1, tag: writerTag)
     }
 
-    private func formatted(details: LogDetails, message: String) -> String {
+    func formatted(details: SocketLogDetails, message: String) -> String {
         let strippedMessage = message.replacingOccurrences(of: "\n", with: " ")
         let header: String
-        if let token = token {
-            header = "[\(token) tag=\"\(senderName)\" tag=\"\(details.programName)\"]"
-        } else {
+        if token.isEmpty {
             header = "-"
+        } else {
+            let tags: [String] = [details.hostname, details.application] + details.headers
+            let joinedHeader: String = tags.map { "tag=\"\($0)\"" }.reduce("", { $0 + " " + $1 })
+            header = "[\(token)\(joinedHeader)]"
         }
-        return "<22>1 \(dateFormatter.string(from: details.date)) \(senderName) " +
-               "\(details.programName) - - \(header) \(strippedMessage)\n"
+        return "\(details.prefix(withFormatter: dateFormatter)) \(header) \(strippedMessage)\n"
     }
 
-    private func connectToHost() {
+    func connectToHost() {
         do {
             try tcpSocket.connect(toHost: host, onPort: UInt16(port))
             if useTLS {
@@ -109,10 +203,9 @@ public final class SocketLogger: NSObject {
     }
 }
 
-extension SocketLogger: GCDAsyncSocketDelegate {}
-
 private let posixLocaleID: String = "en_US_POSIX"
-private let messageQueueID: String = "com.instacart.SocketLogger"
+private let messageQueueID: String = "com.instacart.socket-logger"
+private let writerTag: Int = 0x2a
 
 // See https://tools.ietf.org/html/rfc5424#section-6.2.3
 private let defaultDateFormat: String = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZZZZZ"
