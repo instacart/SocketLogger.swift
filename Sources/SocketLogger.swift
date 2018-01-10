@@ -9,10 +9,10 @@
 import CocoaAsyncSocket
 
 public struct LogDetails {
-    public let date: NSDate
+    public let date: Date
     public let programName: String
 
-    public init(date: NSDate, programName: String) {
+    public init(date: Date, programName: String) {
         self.date = date
         self.programName = programName
     }
@@ -26,11 +26,11 @@ public final class SocketLogger: NSObject {
     public let senderName: String
     public let token: String?
 
-    public static func papertrail(senderName senderName: String) -> SocketLogger {
+    public static func papertrail(senderName: String) -> SocketLogger {
         return .init(host: "logs.papertrailapp.com", port: 46865, senderName: senderName)
     }
 
-    public static func loggly(senderName senderName: String, token: String) -> SocketLogger {
+    public static func loggly(senderName: String, token: String) -> SocketLogger {
         let token = "\(token)@41058"
         return .init(host: "logs-01.loggly.com", port: 6514, senderName: senderName, token: token)
     }
@@ -41,28 +41,28 @@ public final class SocketLogger: NSObject {
         self.useTLS = useTLS
         self.senderName = senderName
         self.token = token
-        messageQueue = dispatch_queue_create("\(messageQueueID).\(host)", DISPATCH_QUEUE_SERIAL)
+        messageQueue = DispatchQueue(label: "\(messageQueueID).\(host)", attributes: [])
     }
 
-    public func log(details details: LogDetails, message: String) {
-        dispatch_async(messageQueue) {
+    public func log(details: LogDetails, message: String) {
+        messageQueue.async {
             self.enqueueLog(details: details, message: message)
         }
     }
 
-    private let messageQueue: dispatch_queue_t
+    private let messageQueue: DispatchQueue
     private var enqueuedLogs: [String] = []
     private lazy var tcpSocket: GCDAsyncSocket = .init(delegate: self, delegateQueue: self.messageQueue)
-    private lazy var dateFormatter: NSDateFormatter = {
-        let formatter = NSDateFormatter()
-        let posixLocale = NSLocale(localeIdentifier: posixLocaleID)
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        let posixLocale = Locale(identifier: posixLocaleID)
         formatter.locale = posixLocale
-        formatter.timeZone = NSTimeZone(abbreviation: "PST")
+        formatter.timeZone = TimeZone(abbreviation: "PST")
         formatter.dateFormat = defaultDateFormat
         return formatter
     }()
 
-    private func enqueueLog(details details: LogDetails, message: String) {
+    private func enqueueLog(details: LogDetails, message: String) {
         let msg = formatted(details: details, message: message)
         if !msg.isEmpty {
             enqueuedLogs.append(msg)
@@ -77,28 +77,28 @@ public final class SocketLogger: NSObject {
     private func writeLogs() {
         guard tcpSocket.isConnected else { return }
         while let msg = enqueuedLogs.first {
-            if let data = msg.dataUsingEncoding(NSUTF8StringEncoding) {
-                tcpSocket.writeData(data, withTimeout: -1, tag: 1)
+            if let data = msg.data(using: .utf8) {
+                tcpSocket.write(data, withTimeout: -1, tag: 1)
             }
             enqueuedLogs.removeFirst()
         }
     }
 
-    private func formatted(details details: LogDetails, message: String) -> String {
-        let strippedMessage = message.stringByReplacingOccurrencesOfString("\n", withString: " ")
+    private func formatted(details: LogDetails, message: String) -> String {
+        let strippedMessage = message.replacingOccurrences(of: "\n", with: " ")
         let header: String
         if let token = token {
             header = "[\(token) tag=\"\(senderName)\" tag=\"\(details.programName)\"]"
         } else {
             header = "-"
         }
-        return "<22>1 \(dateFormatter.stringFromDate(details.date)) \(senderName) " +
+        return "<22>1 \(dateFormatter.string(from: details.date)) \(senderName) " +
                "\(details.programName) - - \(header) \(strippedMessage)\n"
     }
 
     private func connectToHost() {
         do {
-            try tcpSocket.connectToHost(host, onPort: UInt16(port))
+            try tcpSocket.connect(toHost: host, onPort: UInt16(port))
             if useTLS {
                 tcpSocket.startTLS(nil)
             }
