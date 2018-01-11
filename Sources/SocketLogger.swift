@@ -61,7 +61,7 @@ public struct SocketLogDetails {
 public extension SocketLogDetails {
     init(severity: SyslogSeverity = .info,
          facility: SyslogFacility = .user,
-         date: Date,
+         date: Date = .init(),
          hostname: String,
          application: String,
          pid: Int? = nil,
