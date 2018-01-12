@@ -43,6 +43,16 @@ logger.log(details: .init(hostname: "mymachine.example.com", application: "Socke
            message: "A socket is a generalized interprocess communication channel.")
 ```
 
+### Providers
+
+SocketLogger currently supports:
+
+- [Papertrail](https://papertrailapp.com/)
+- [Loggly](https://www.loggly.com/)
+- [LogDNA](https://logdna.com/)
+
+Don't see yours listed? [Add it](https://github.com/instacart/SocketLogger.swift/blob/607184c4761a62321e9036a1af6511662624a50c/Sources/SocketLogger.swift#L88) [today](https://github.com/instacart/SocketLogger.swift/pulls/)!
+
 ## License
 
 ```
