@@ -15,6 +15,8 @@
 		050423C22007F2EE003E6AF3 /* SocketLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* SocketLogger.swift */; };
 		05145094200E8C91004603AB /* SocketLoggerXCGDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145093200E8C91004603AB /* SocketLoggerXCGDestination.swift */; };
 		05145096200E8C9A004603AB /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05145095200E8C9A004603AB /* XCGLogger.framework */; };
+		05145099200E9419004603AB /* SocketLoggerDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145098200E9419004603AB /* SocketLoggerDestination.swift */; };
+		0514509B200E9427004603AB /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0514509A200E9427004603AB /* SwiftyBeaver.framework */; };
 		053A502C200E7C9B00FB5768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A5024200E7C9B00FB5768 /* AppDelegate.swift */; };
 		053A502D200E7C9B00FB5768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053A5025200E7C9B00FB5768 /* Assets.xcassets */; };
 		053A5031200E7C9B00FB5768 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A502B200E7C9B00FB5768 /* ExampleViewController.swift */; };
@@ -38,6 +40,8 @@
 		050423B92007F2CA003E6AF3 /* SocketLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		05145093200E8C91004603AB /* SocketLoggerXCGDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketLoggerXCGDestination.swift; sourceTree = "<group>"; };
 		05145095200E8C9A004603AB /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCGLogger.framework; sourceTree = "<group>"; };
+		05145098200E9419004603AB /* SocketLoggerDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketLoggerDestination.swift; sourceTree = "<group>"; };
+		0514509A200E9427004603AB /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyBeaver.framework; sourceTree = "<group>"; };
 		053A4FF5200E7BC800FB5768 /* SocketLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketLogWriter.swift; sourceTree = "<group>"; };
 		053A5011200E7C5B00FB5768 /* SocketLoggerExample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SocketLoggerExample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		053A5024200E7C9B00FB5768 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				053A5033200E7CB800FB5768 /* Willow.framework in Frameworks */,
+				0514509B200E9427004603AB /* SwiftyBeaver.framework in Frameworks */,
 				05145096200E8C9A004603AB /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,10 +136,19 @@
 			path = XCGLogger;
 			sourceTree = "<group>";
 		};
+		05145097200E9419004603AB /* SwiftyBeaver */ = {
+			isa = PBXGroup;
+			children = (
+				05145098200E9419004603AB /* SocketLoggerDestination.swift */,
+			);
+			path = SwiftyBeaver;
+			sourceTree = "<group>";
+		};
 		053A4FF3200E7BC800FB5768 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
 				053A5023200E7C9B00FB5768 /* iOS */,
+				05145097200E9419004603AB /* SwiftyBeaver */,
 				05145092200E8C91004603AB /* XCGLogger */,
 				053A4FF4200E7BC800FB5768 /* Willow */,
 			);
@@ -263,6 +277,7 @@
 		286BB2EA1E976AD2005DAF6C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0514509A200E9427004603AB /* SwiftyBeaver.framework */,
 				05145095200E8C9A004603AB /* XCGLogger.framework */,
 				053A5032200E7CB800FB5768 /* Willow.framework */,
 				286BB2ED1E976AD2005DAF6C /* CocoaAsyncSocket.framework */,
@@ -557,6 +572,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/CocoaAsyncSocket.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Willow.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyBeaver.framework",
 			);
 			name = "Copy Carthage Frameworks";
 			outputPaths = (
@@ -611,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				053A5035200E7DA500FB5768 /* SocketLogWriter.swift in Sources */,
+				05145099200E9419004603AB /* SocketLoggerDestination.swift in Sources */,
 				053A5031200E7C9B00FB5768 /* ExampleViewController.swift in Sources */,
 				053A502C200E7C9B00FB5768 /* AppDelegate.swift in Sources */,
 				05145094200E8C91004603AB /* SocketLoggerXCGDestination.swift in Sources */,
@@ -1118,7 +1135,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Examples/iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1181,7 +1198,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Examples/iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.instacart.SocketLoggerExample-iOS";
