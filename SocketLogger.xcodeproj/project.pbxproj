@@ -13,12 +13,34 @@
 		050423A62007F1A9003E6AF3 /* SocketLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* SocketLogger.swift */; };
 		050423C12007F2EB003E6AF3 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 286BB2ED1E976AD2005DAF6C /* CocoaAsyncSocket.framework */; };
 		050423C22007F2EE003E6AF3 /* SocketLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* SocketLogger.swift */; };
+		053A502C200E7C9B00FB5768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A5024200E7C9B00FB5768 /* AppDelegate.swift */; };
+		053A502D200E7C9B00FB5768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053A5025200E7C9B00FB5768 /* Assets.xcassets */; };
+		053A5031200E7C9B00FB5768 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A502B200E7C9B00FB5768 /* ExampleViewController.swift */; };
+		053A5033200E7CB800FB5768 /* Willow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053A5032200E7CB800FB5768 /* Willow.framework */; };
+		053A5035200E7DA500FB5768 /* SocketLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A4FF5200E7BC800FB5768 /* SocketLogWriter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		053A5036200E7DB200FB5768 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 050423B82007F2CA003E6AF3;
+			remoteInfo = "SocketLogger-iOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0504238D2007F0BA003E6AF3 /* SocketLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0504239D2007F19C003E6AF3 /* SocketLogger_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketLogger_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		050423B92007F2CA003E6AF3 /* SocketLogger_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketLogger_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0504239D2007F19C003E6AF3 /* SocketLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		050423B92007F2CA003E6AF3 /* SocketLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		053A4FF5200E7BC800FB5768 /* SocketLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketLogWriter.swift; sourceTree = "<group>"; };
+		053A5011200E7C5B00FB5768 /* SocketLoggerExample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SocketLoggerExample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		053A5024200E7C9B00FB5768 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		053A5025200E7C9B00FB5768 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		053A502A200E7C9B00FB5768 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		053A502B200E7C9B00FB5768 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		053A5032200E7CB800FB5768 /* Willow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Willow.framework; sourceTree = "<group>"; };
 		286BB2C81E976AA0005DAF6C /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		286BB2CA1E976AA0005DAF6C /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		286BB2CB1E976AA0005DAF6C /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
@@ -78,6 +100,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		053A500E200E7C5B00FB5768 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				053A5033200E7CB800FB5768 /* Willow.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		286BB3011E976B2A005DAF6C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,6 +118,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053A4FF3200E7BC800FB5768 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				053A5023200E7C9B00FB5768 /* iOS */,
+				053A4FF4200E7BC800FB5768 /* Willow */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		053A4FF4200E7BC800FB5768 /* Willow */ = {
+			isa = PBXGroup;
+			children = (
+				053A4FF5200E7BC800FB5768 /* SocketLogWriter.swift */,
+			);
+			path = Willow;
+			sourceTree = "<group>";
+		};
+		053A5023200E7C9B00FB5768 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				053A5024200E7C9B00FB5768 /* AppDelegate.swift */,
+				053A502B200E7C9B00FB5768 /* ExampleViewController.swift */,
+				053A5025200E7C9B00FB5768 /* Assets.xcassets */,
+				053A502A200E7C9B00FB5768 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		286BB2C51E976AA0005DAF6C /* Configs */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +249,7 @@
 		286BB2EA1E976AD2005DAF6C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				053A5032200E7CB800FB5768 /* Willow.framework */,
 				286BB2ED1E976AD2005DAF6C /* CocoaAsyncSocket.framework */,
 			);
 			path = iOS;
@@ -234,8 +293,9 @@
 			children = (
 				286BB3041E976B2A005DAF6C /* SocketLoggerTests.xctest */,
 				0504238D2007F0BA003E6AF3 /* SocketLogger.framework */,
-				0504239D2007F19C003E6AF3 /* SocketLogger_tvOS.framework */,
-				050423B92007F2CA003E6AF3 /* SocketLogger_iOS.framework */,
+				0504239D2007F19C003E6AF3 /* SocketLogger.framework */,
+				050423B92007F2CA003E6AF3 /* SocketLogger.framework */,
+				053A5011200E7C5B00FB5768 /* SocketLoggerExample-iOS.app */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -246,6 +306,7 @@
 				286BB2C51E976AA0005DAF6C /* Configs */,
 				286BB2E81E976AD2005DAF6C /* Frameworks */,
 				OBJ_7 /* Sources */,
+				053A4FF3200E7BC800FB5768 /* Examples */,
 				OBJ_10 /* Tests */,
 				OBJ_13 /* Products */,
 			);
@@ -320,7 +381,7 @@
 			);
 			name = "SocketLogger-tvOS";
 			productName = "SocketLogger-tvOS";
-			productReference = 0504239D2007F19C003E6AF3 /* SocketLogger_tvOS.framework */;
+			productReference = 0504239D2007F19C003E6AF3 /* SocketLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		050423B82007F2CA003E6AF3 /* SocketLogger-iOS */ = {
@@ -338,8 +399,27 @@
 			);
 			name = "SocketLogger-iOS";
 			productName = "SocketLogger-iOS";
-			productReference = 050423B92007F2CA003E6AF3 /* SocketLogger_iOS.framework */;
+			productReference = 050423B92007F2CA003E6AF3 /* SocketLogger.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		053A5010200E7C5B00FB5768 /* SocketLoggerExample-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 053A5020200E7C5B00FB5768 /* Build configuration list for PBXNativeTarget "SocketLoggerExample-iOS" */;
+			buildPhases = (
+				053A500D200E7C5B00FB5768 /* Sources */,
+				053A500E200E7C5B00FB5768 /* Frameworks */,
+				053A500F200E7C5B00FB5768 /* Resources */,
+				053A5034200E7CBB00FB5768 /* Copy Carthage Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				053A5037200E7DB200FB5768 /* PBXTargetDependency */,
+			);
+			name = "SocketLoggerExample-iOS";
+			productName = "SocketLoggerExample-iOS";
+			productReference = 053A5011200E7C5B00FB5768 /* SocketLoggerExample-iOS.app */;
+			productType = "com.apple.product-type.application";
 		};
 		286BB3031E976B2A005DAF6C /* SocketLoggerTests */ = {
 			isa = PBXNativeTarget;
@@ -365,7 +445,7 @@
 		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 9999;
 				TargetAttributes = {
 					0504238C2007F0BA003E6AF3 = {
@@ -377,6 +457,10 @@
 						ProvisioningStyle = Automatic;
 					};
 					050423B82007F2CA003E6AF3 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					053A5010200E7C5B00FB5768 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -393,6 +477,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = OBJ_5;
 			productRefGroup = OBJ_13 /* Products */;
@@ -403,6 +488,7 @@
 				0504238C2007F0BA003E6AF3 /* SocketLogger-Mac */,
 				0504239C2007F19C003E6AF3 /* SocketLogger-tvOS */,
 				286BB3031E976B2A005DAF6C /* SocketLoggerTests */,
+				053A5010200E7C5B00FB5768 /* SocketLoggerExample-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -429,6 +515,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		053A500F200E7C5B00FB5768 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				053A502D200E7C9B00FB5768 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		286BB3021E976B2A005DAF6C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,6 +533,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		053A5034200E7CBB00FB5768 /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaAsyncSocket.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Willow.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		286BB3161E976C12005DAF6C /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -480,6 +590,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		053A500D200E7C5B00FB5768 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				053A5035200E7DA500FB5768 /* SocketLogWriter.swift in Sources */,
+				053A5031200E7C9B00FB5768 /* ExampleViewController.swift in Sources */,
+				053A502C200E7C9B00FB5768 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		286BB3001E976B2A005DAF6C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,6 +608,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		053A5037200E7DB200FB5768 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 050423B82007F2CA003E6AF3 /* SocketLogger-iOS */;
+			targetProxy = 053A5036200E7DB200FB5768 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		050423932007F0BA003E6AF3 /* Debug */ = {
@@ -693,7 +821,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.instacart.SocketLogger;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = SocketLogger;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -762,7 +890,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.instacart.SocketLogger;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = SocketLogger;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -837,7 +965,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.instacart.SocketLogger;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = SocketLogger;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -906,7 +1034,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.instacart.SocketLogger;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = SocketLogger;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -915,6 +1043,137 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		053A5021200E7C5B00FB5768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Examples/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.instacart.SocketLoggerExample-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		053A5022200E7C5B00FB5768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Examples/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.instacart.SocketLoggerExample-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -1065,6 +1324,15 @@
 			buildConfigurations = (
 				050423BF2007F2CA003E6AF3 /* Debug */,
 				050423C02007F2CA003E6AF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		053A5020200E7C5B00FB5768 /* Build configuration list for PBXNativeTarget "SocketLoggerExample-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				053A5021200E7C5B00FB5768 /* Debug */,
+				053A5022200E7C5B00FB5768 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
