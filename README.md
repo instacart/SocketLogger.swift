@@ -1,10 +1,11 @@
 # SocketLogger
 
-SocketLogger is a flexible logging µlib compatible with any socket-based
-syslog service. Allows flexibility to choose between various logging providers
-while integrating with any logging
-framework of your
-choice (e.g. [Willow](https://github.com/Nike-Inc/Willow), [Helium](https://github.com/IBM-Swift/HeliumLogger), [XCGLogger](https://github.com/DaveWoodCom/XCGLogger)).
+SocketLogger is a logging µlib compatible with any socket-based syslog
+service. Allows flexibility to choose between various logging providers while
+integrating with any logging framework of your choice (e.g.
+[SwiftyBeaver](https://github.com/SwiftyBeaver/SwiftyBeaver),
+[Willow](https://github.com/Nike-Inc/Willow),
+[XCGLogger](https://github.com/DaveWoodCom/XCGLogger)).
 
 ## Requirements
 
@@ -43,7 +44,22 @@ logger.log(details: .init(hostname: "mymachine.example.com", application: "Socke
            message: "A socket is a generalized interprocess communication channel.")
 ```
 
-### Providers
+## Integration
+
+We have included a handful of
+[examples](https://github.com/instacart/SocketLogger.swift/tree/master/Examples)
+for using SocketLogger with popular logging frameworks in this repo.
+
+### Carthage
+
+Since Carthage has no notion of subspecs, these must be copied manually:
+
+- Run `carthage checkout`.
+- Drag `Carthage/Checkouts/SocketLogger.swift/Examples/{library}` to your
+  project. Make sure the "Copy items if needed" toggle is turned off.
+- Integrate according to instructions with your logging framework.
+
+## Providers
 
 SocketLogger currently supports:
 
@@ -51,7 +67,9 @@ SocketLogger currently supports:
 - [Loggly](https://www.loggly.com/)
 - [LogDNA](https://logdna.com/)
 
-Don't see yours listed? [Add it](https://github.com/instacart/SocketLogger.swift/blob/607184c4761a62321e9036a1af6511662624a50c/Sources/SocketLogger.swift#L88) [today](https://github.com/instacart/SocketLogger.swift/pulls/)!
+Don't see yours listed? 
+[Add it](https://github.com/instacart/SocketLogger.swift/blob/607184c/Sources/SocketLogger.swift#L88)
+[today](https://github.com/instacart/SocketLogger.swift/pulls/)!
 
 ## License
 
