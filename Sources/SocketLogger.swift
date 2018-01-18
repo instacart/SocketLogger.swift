@@ -101,40 +101,53 @@ public extension SocketLogDetails {
 public final class SocketLogger {
     let host: String
     let port: Int
-    let useTLS: Bool
+    let isTLSEnabled: Bool
     let token: String
+    let timeZone: TimeZone
 
-    /// Create a SocketLogger instance configured for Papertrail
-    /// (https://papertrailapp.com).
-    public static var papertrail: SocketLogger { return .init(host: "logs.papertrailapp.com", port: 46865) }
-
-    /// Create a SocketLogger instance configured for Loggly
-    /// (https://www.loggly.com).
-    public static func loggly(token: String) -> SocketLogger {
-        return .init(host: "logs-01.loggly.com", port: 6514, token: "\(token)@41058")
+    /// Create a SocketLogger instance configured for Papertrail.
+    /// https://papertrailapp.com
+    public static func papertrail(timeZone: TimeZone = .current) -> SocketLogger {
+        return .init(host: "logs.papertrailapp.com", port: 46865, timeZone: timeZone)
     }
 
-    /// Create a SocketLogger instance configured for LogDNA
-    /// (https://logdna.com).
-    public static func logDNA(token: String, port: Int) -> SocketLogger {
-        return .init(host: "syslog-a.logdna.com", port: port, token: "logdna@48950 key=\"\(token)\"")
+    /// Create a SocketLogger instance configured for Loggly.
+    /// https://www.loggly.com
+    public static func loggly(token: String, timeZone: TimeZone = .current) -> SocketLogger {
+        return .init(host: "logs-01.loggly.com", port: 6514, token: "\(token)@41058", timeZone: timeZone)
+    }
+
+    /// Create a SocketLogger instance configured for LogDNA.
+    /// https://logdna.com
+    public static func logDNA(token: String, port: Int, timeZone: TimeZone = .current) -> SocketLogger {
+        return .init(host: "syslog-a.logdna.com",
+                     port: port,
+                     token: "logdna@48950 key=\"\(token)\"",
+                     timeZone: timeZone)
     }
 
     /// Create a SocketLogger instance configured for a given host.
     ///
     /// - parameter host: Basename to connect socket.
     /// - parameter port: Port to configure socket.
-    /// - parameter useTLS: Toggle to secure connection with TLS
-    ///                     (defaults to true).
+    /// - parameter isTLSEnabled: Toggle to secure connection with TLS
+    ///                           (defaults to true).
     /// - parameter token: Token to attach to syslog headers (typically used
     ///                    for API keys).
+    /// - parameter timeZone: Time zone to use when formatting timestamps
+    ///                       (defaults to current).
     ///
     /// - returns: SocketLogger instance configured for the given host.
-    public init(host: String, port: Int, useTLS: Bool = true, token: String = "") {
+    public init(host: String,
+                port: Int,
+                isTLSEnabled: Bool = true,
+                token: String = "",
+                timeZone: TimeZone = .current) {
         self.host = host
         self.port = port
-        self.useTLS = useTLS
+        self.isTLSEnabled = isTLSEnabled
         self.token = token
+        self.timeZone = timeZone
         messageQueue = DispatchQueue(label: "\(messageQueueID).\(host)", attributes: [])
     }
 
@@ -166,7 +179,7 @@ public final class SocketLogger {
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: posixLocaleID)
-        formatter.timeZone = TimeZone(abbreviation: "PST")
+        formatter.timeZone = self.timeZone
         formatter.dateFormat = defaultDateFormat
         return formatter
     }()
@@ -231,7 +244,7 @@ private extension SocketLogger {
     func connectToHost() {
         do {
             try tcpSocket.connect(toHost: host, onPort: UInt16(port))
-            if useTLS {
+            if isTLSEnabled {
                 tcpSocket.startTLS(nil)
             }
             writeLogs()
