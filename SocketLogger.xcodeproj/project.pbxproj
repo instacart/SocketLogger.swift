@@ -17,6 +17,29 @@
 		05145096200E8C9A004603AB /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05145095200E8C9A004603AB /* XCGLogger.framework */; };
 		05145099200E9419004603AB /* SocketLoggerDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05145098200E9419004603AB /* SocketLoggerDestination.swift */; };
 		0514509B200E9427004603AB /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0514509A200E9427004603AB /* SwiftyBeaver.framework */; };
+		0514509E20101895004603AB /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 286BB2ED1E976AD2005DAF6C /* CocoaAsyncSocket.framework */; };
+		051450A1201018D8004603AB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051450A0201018D8004603AB /* Nimble.framework */; };
+		051450A520113821004603AB /* SocketProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450A420113821004603AB /* SocketProxy.swift */; };
+		051450A620113821004603AB /* SocketProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450A420113821004603AB /* SocketProxy.swift */; };
+		051450A720113821004603AB /* SocketProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450A420113821004603AB /* SocketProxy.swift */; };
+		051450A920114D6C004603AB /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051450A820114D6C004603AB /* SwiftCheck.framework */; };
+		051450AF20115BD2004603AB /* ArbitraryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450AC20115BD2004603AB /* ArbitraryExtensions.swift */; };
+		051450B020115BD2004603AB /* NimbleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450AD20115BD2004603AB /* NimbleExtensions.swift */; };
+		051450B120115BD2004603AB /* SocketLoggerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450AE20115BD2004603AB /* SocketLoggerSpec.swift */; };
+		051450BB20115F77004603AB /* SocketLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0504238D2007F0BA003E6AF3 /* SocketLogger.framework */; };
+		051450CA20115F8D004603AB /* SocketLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0504239D2007F19C003E6AF3 /* SocketLogger.framework */; };
+		051450D320115FAA004603AB /* ArbitraryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450AC20115BD2004603AB /* ArbitraryExtensions.swift */; };
+		051450D420115FAA004603AB /* NimbleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450AD20115BD2004603AB /* NimbleExtensions.swift */; };
+		051450D520115FAA004603AB /* SocketLoggerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450AE20115BD2004603AB /* SocketLoggerSpec.swift */; };
+		051450D620115FAA004603AB /* ArbitraryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450AC20115BD2004603AB /* ArbitraryExtensions.swift */; };
+		051450D720115FAA004603AB /* NimbleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450AD20115BD2004603AB /* NimbleExtensions.swift */; };
+		051450D820115FAA004603AB /* SocketLoggerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051450AE20115BD2004603AB /* SocketLoggerSpec.swift */; };
+		051450E620116071004603AB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051450E320116070004603AB /* Nimble.framework */; };
+		051450E720116071004603AB /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051450E420116070004603AB /* SwiftCheck.framework */; };
+		051450E820116071004603AB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051450E520116071004603AB /* Quick.framework */; };
+		051450EC20116082004603AB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051450E920116082004603AB /* Quick.framework */; };
+		051450ED20116082004603AB /* SwiftCheck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051450EA20116082004603AB /* SwiftCheck.framework */; };
+		051450EE20116082004603AB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 051450EB20116082004603AB /* Nimble.framework */; };
 		053A502C200E7C9B00FB5768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A5024200E7C9B00FB5768 /* AppDelegate.swift */; };
 		053A502D200E7C9B00FB5768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053A5025200E7C9B00FB5768 /* Assets.xcassets */; };
 		053A5031200E7C9B00FB5768 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A502B200E7C9B00FB5768 /* ExampleViewController.swift */; };
@@ -25,6 +48,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		051450BC20115F77004603AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0504238C2007F0BA003E6AF3;
+			remoteInfo = "SocketLogger-Mac";
+		};
+		051450CB20115F8D004603AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0504239C2007F19C003E6AF3;
+			remoteInfo = "SocketLogger-tvOS";
+		};
 		053A5036200E7DB200FB5768 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
@@ -42,6 +79,20 @@
 		05145095200E8C9A004603AB /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCGLogger.framework; sourceTree = "<group>"; };
 		05145098200E9419004603AB /* SocketLoggerDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketLoggerDestination.swift; sourceTree = "<group>"; };
 		0514509A200E9427004603AB /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyBeaver.framework; sourceTree = "<group>"; };
+		051450A0201018D8004603AB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
+		051450A420113821004603AB /* SocketProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProxy.swift; sourceTree = "<group>"; };
+		051450A820114D6C004603AB /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftCheck.framework; sourceTree = "<group>"; };
+		051450AC20115BD2004603AB /* ArbitraryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArbitraryExtensions.swift; sourceTree = "<group>"; };
+		051450AD20115BD2004603AB /* NimbleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleExtensions.swift; sourceTree = "<group>"; };
+		051450AE20115BD2004603AB /* SocketLoggerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketLoggerSpec.swift; sourceTree = "<group>"; };
+		051450B620115F77004603AB /* SocketLogger-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SocketLogger-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		051450C520115F8D004603AB /* SocketLogger-TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SocketLogger-TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		051450E320116070004603AB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
+		051450E420116070004603AB /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftCheck.framework; sourceTree = "<group>"; };
+		051450E520116071004603AB /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
+		051450E920116082004603AB /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
+		051450EA20116082004603AB /* SwiftCheck.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftCheck.framework; sourceTree = "<group>"; };
+		051450EB20116082004603AB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		053A4FF5200E7BC800FB5768 /* SocketLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketLogWriter.swift; sourceTree = "<group>"; };
 		053A5011200E7C5B00FB5768 /* SocketLoggerExample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SocketLoggerExample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		053A5024200E7C9B00FB5768 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,9 +128,8 @@
 		286BB2ED1E976AD2005DAF6C /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		286BB2F01E976AD2005DAF6C /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		286BB2F31E976AD2005DAF6C /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		286BB3041E976B2A005DAF6C /* SocketLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocketLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		286BB3041E976B2A005DAF6C /* SocketLogger-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SocketLogger-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		286BB3131E976B74005DAF6C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		OBJ_12 /* SocketLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketLoggerTests.swift; sourceTree = "<group>"; };
 		OBJ_9 /* SocketLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +158,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		051450B320115F77004603AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				051450E820116071004603AB /* Quick.framework in Frameworks */,
+				051450BB20115F77004603AB /* SocketLogger.framework in Frameworks */,
+				051450E720116071004603AB /* SwiftCheck.framework in Frameworks */,
+				051450E620116071004603AB /* Nimble.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		051450C220115F8D004603AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				051450EC20116082004603AB /* Quick.framework in Frameworks */,
+				051450ED20116082004603AB /* SwiftCheck.framework in Frameworks */,
+				051450CA20115F8D004603AB /* SocketLogger.framework in Frameworks */,
+				051450EE20116082004603AB /* Nimble.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		053A500E200E7C5B00FB5768 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,6 +194,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0514509E20101895004603AB /* CocoaAsyncSocket.framework in Frameworks */,
+				051450A920114D6C004603AB /* SwiftCheck.framework in Frameworks */,
+				051450A1201018D8004603AB /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +352,8 @@
 		286BB2EA1E976AD2005DAF6C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				051450A820114D6C004603AB /* SwiftCheck.framework */,
+				051450A0201018D8004603AB /* Nimble.framework */,
 				0514509A200E9427004603AB /* SwiftyBeaver.framework */,
 				05145095200E8C9A004603AB /* XCGLogger.framework */,
 				053A5032200E7CB800FB5768 /* Willow.framework */,
@@ -288,6 +365,9 @@
 		286BB2EF1E976AD2005DAF6C /* Mac */ = {
 			isa = PBXGroup;
 			children = (
+				051450E320116070004603AB /* Nimble.framework */,
+				051450E520116071004603AB /* Quick.framework */,
+				051450E420116070004603AB /* SwiftCheck.framework */,
 				286BB2F01E976AD2005DAF6C /* CocoaAsyncSocket.framework */,
 			);
 			path = Mac;
@@ -296,6 +376,9 @@
 		286BB2F21E976AD2005DAF6C /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
+				051450EB20116082004603AB /* Nimble.framework */,
+				051450E920116082004603AB /* Quick.framework */,
+				051450EA20116082004603AB /* SwiftCheck.framework */,
 				286BB2F31E976AD2005DAF6C /* CocoaAsyncSocket.framework */,
 			);
 			path = tvOS;
@@ -304,28 +387,23 @@
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* SocketLoggerTests */,
+				051450AC20115BD2004603AB /* ArbitraryExtensions.swift */,
+				051450AD20115BD2004603AB /* NimbleExtensions.swift */,
+				051450AE20115BD2004603AB /* SocketLoggerSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		OBJ_11 /* SocketLoggerTests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_12 /* SocketLoggerTests.swift */,
-			);
-			name = SocketLoggerTests;
-			path = Tests/SocketLoggerTests;
-			sourceTree = SOURCE_ROOT;
-		};
 		OBJ_13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				286BB3041E976B2A005DAF6C /* SocketLoggerTests.xctest */,
+				286BB3041E976B2A005DAF6C /* SocketLogger-iOSTests.xctest */,
 				0504238D2007F0BA003E6AF3 /* SocketLogger.framework */,
 				0504239D2007F19C003E6AF3 /* SocketLogger.framework */,
 				050423B92007F2CA003E6AF3 /* SocketLogger.framework */,
 				053A5011200E7C5B00FB5768 /* SocketLoggerExample-iOS.app */,
+				051450B620115F77004603AB /* SocketLogger-MacTests.xctest */,
+				051450C520115F8D004603AB /* SocketLogger-TVTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -347,6 +425,7 @@
 			children = (
 				286BB3131E976B74005DAF6C /* Info.plist */,
 				OBJ_9 /* SocketLogger.swift */,
+				051450A420113821004603AB /* SocketProxy.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -432,6 +511,44 @@
 			productReference = 050423B92007F2CA003E6AF3 /* SocketLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		051450B520115F77004603AB /* SocketLogger-MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 051450BE20115F77004603AB /* Build configuration list for PBXNativeTarget "SocketLogger-MacTests" */;
+			buildPhases = (
+				051450B220115F77004603AB /* Sources */,
+				051450B320115F77004603AB /* Frameworks */,
+				051450B420115F77004603AB /* Resources */,
+				051450E120115FCE004603AB /* Copy Carthage Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				051450BD20115F77004603AB /* PBXTargetDependency */,
+			);
+			name = "SocketLogger-MacTests";
+			productName = "SocketLogger-MacTests";
+			productReference = 051450B620115F77004603AB /* SocketLogger-MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		051450C420115F8D004603AB /* SocketLogger-TVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 051450CD20115F8D004603AB /* Build configuration list for PBXNativeTarget "SocketLogger-TVTests" */;
+			buildPhases = (
+				051450C120115F8D004603AB /* Sources */,
+				051450C220115F8D004603AB /* Frameworks */,
+				051450C320115F8D004603AB /* Resources */,
+				051450E220115FF3004603AB /* Copy Carthage Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				051450CC20115F8D004603AB /* PBXTargetDependency */,
+			);
+			name = "SocketLogger-TVTests";
+			productName = "SocketLogger-TVTests";
+			productReference = 051450C520115F8D004603AB /* SocketLogger-TVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		053A5010200E7C5B00FB5768 /* SocketLoggerExample-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 053A5020200E7C5B00FB5768 /* Build configuration list for PBXNativeTarget "SocketLoggerExample-iOS" */;
@@ -451,22 +568,23 @@
 			productReference = 053A5011200E7C5B00FB5768 /* SocketLoggerExample-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		286BB3031E976B2A005DAF6C /* SocketLoggerTests */ = {
+		286BB3031E976B2A005DAF6C /* SocketLogger-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 286BB3101E976B2A005DAF6C /* Build configuration list for PBXNativeTarget "SocketLoggerTests" */;
+			buildConfigurationList = 286BB3101E976B2A005DAF6C /* Build configuration list for PBXNativeTarget "SocketLogger-iOSTests" */;
 			buildPhases = (
 				286BB3001E976B2A005DAF6C /* Sources */,
 				286BB3161E976C12005DAF6C /* Swift Lint */,
 				286BB3011E976B2A005DAF6C /* Frameworks */,
 				286BB3021E976B2A005DAF6C /* Resources */,
+				0514509F201018BA004603AB /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SocketLoggerTests;
+			name = "SocketLogger-iOSTests";
 			productName = SocketLoggerTests;
-			productReference = 286BB3041E976B2A005DAF6C /* SocketLoggerTests.xctest */;
+			productReference = 286BB3041E976B2A005DAF6C /* SocketLogger-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -490,6 +608,14 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					051450B520115F77004603AB = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					051450C420115F8D004603AB = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					053A5010200E7C5B00FB5768 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -497,6 +623,7 @@
 					286BB3031E976B2A005DAF6C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 59VC75K95Z;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -517,8 +644,10 @@
 				050423B82007F2CA003E6AF3 /* SocketLogger-iOS */,
 				0504238C2007F0BA003E6AF3 /* SocketLogger-Mac */,
 				0504239C2007F19C003E6AF3 /* SocketLogger-tvOS */,
-				286BB3031E976B2A005DAF6C /* SocketLoggerTests */,
 				053A5010200E7C5B00FB5768 /* SocketLoggerExample-iOS */,
+				286BB3031E976B2A005DAF6C /* SocketLogger-iOSTests */,
+				051450B520115F77004603AB /* SocketLogger-MacTests */,
+				051450C420115F8D004603AB /* SocketLogger-TVTests */,
 			);
 		};
 /* End PBXProject section */
@@ -545,6 +674,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		051450B420115F77004603AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		051450C320115F8D004603AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		053A500F200E7C5B00FB5768 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -563,6 +706,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0514509F201018BA004603AB /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaAsyncSocket.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftCheck.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		051450E120115FCE004603AB /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/CocoaAsyncSocket.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/SwiftCheck.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		051450E220115FF3004603AB /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/tvOS/CocoaAsyncSocket.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/tvOS/SwiftCheck.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		053A5034200E7CBB00FB5768 /* Copy Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,6 +800,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				050423952007F11F003E6AF3 /* SocketLogger.swift in Sources */,
+				051450A620113821004603AB /* SocketProxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,6 +809,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				050423A62007F1A9003E6AF3 /* SocketLogger.swift in Sources */,
+				051450A720113821004603AB /* SocketProxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +818,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				050423C22007F2EE003E6AF3 /* SocketLogger.swift in Sources */,
+				051450A520113821004603AB /* SocketProxy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		051450B220115F77004603AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				051450D320115FAA004603AB /* ArbitraryExtensions.swift in Sources */,
+				051450D520115FAA004603AB /* SocketLoggerSpec.swift in Sources */,
+				051450D420115FAA004603AB /* NimbleExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		051450C120115F8D004603AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				051450D620115FAA004603AB /* ArbitraryExtensions.swift in Sources */,
+				051450D820115FAA004603AB /* SocketLoggerSpec.swift in Sources */,
+				051450D720115FAA004603AB /* NimbleExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,12 +858,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051450B120115BD2004603AB /* SocketLoggerSpec.swift in Sources */,
+				051450B020115BD2004603AB /* NimbleExtensions.swift in Sources */,
+				051450AF20115BD2004603AB /* ArbitraryExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		051450BD20115F77004603AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0504238C2007F0BA003E6AF3 /* SocketLogger-Mac */;
+			targetProxy = 051450BC20115F77004603AB /* PBXContainerItemProxy */;
+		};
+		051450CC20115F8D004603AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0504239C2007F19C003E6AF3 /* SocketLogger-tvOS */;
+			targetProxy = 051450CB20115F8D004603AB /* PBXContainerItemProxy */;
+		};
 		053A5037200E7DB200FB5768 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 050423B82007F2CA003E6AF3 /* SocketLogger-iOS */;
@@ -1080,6 +1313,261 @@
 			};
 			name = Release;
 		};
+		051450BF20115F77004603AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.instacart.SocketLogger-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		051450C020115F77004603AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.instacart.SocketLogger-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		051450CE20115F8D004603AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.instacart.SocketLogger-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		051450CF20115F8D004603AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.instacart.SocketLogger-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 11.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		053A5021200E7C5B00FB5768 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1238,6 +1726,10 @@
 				DEVELOPMENT_TEAM = 59VC75K95Z;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1255,10 +1747,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.instacart.SocketLoggerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.instacart.SocketLogger-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1290,6 +1784,10 @@
 				DEVELOPMENT_TEAM = 59VC75K95Z;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1302,10 +1800,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.instacart.SocketLoggerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.instacart.SocketLogger-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1362,6 +1861,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		051450BE20115F77004603AB /* Build configuration list for PBXNativeTarget "SocketLogger-MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				051450BF20115F77004603AB /* Debug */,
+				051450C020115F77004603AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		051450CD20115F8D004603AB /* Build configuration list for PBXNativeTarget "SocketLogger-TVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				051450CE20115F8D004603AB /* Debug */,
+				051450CF20115F8D004603AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		053A5020200E7C5B00FB5768 /* Build configuration list for PBXNativeTarget "SocketLoggerExample-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1371,7 +1888,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		286BB3101E976B2A005DAF6C /* Build configuration list for PBXNativeTarget "SocketLoggerTests" */ = {
+		286BB3101E976B2A005DAF6C /* Build configuration list for PBXNativeTarget "SocketLogger-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				286BB3111E976B2A005DAF6C /* Debug */,

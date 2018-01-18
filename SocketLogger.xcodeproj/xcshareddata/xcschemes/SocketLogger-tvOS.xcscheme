@@ -29,7 +29,26 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "051450C420115F8D004603AB"
+               BuildableName = "SocketLogger-TVTests.xctest"
+               BlueprintName = "SocketLogger-TVTests"
+               ReferencedContainer = "container:SocketLogger.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0504239C2007F19C003E6AF3"
+            BuildableName = "SocketLogger.framework"
+            BlueprintName = "SocketLogger-tvOS"
+            ReferencedContainer = "container:SocketLogger.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

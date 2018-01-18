@@ -1,3 +1,6 @@
 github "DaveWoodCom/XCGLogger"
 github "Nike-Inc/Willow"
+github "Quick/Nimble"
+github "Quick/Quick"
 github "SwiftyBeaver/SwiftyBeaver"
+github "typelift/SwiftCheck"

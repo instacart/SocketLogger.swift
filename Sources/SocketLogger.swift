@@ -165,18 +165,28 @@ public final class SocketLogger {
     private lazy var tcpSocket: GCDAsyncSocket = .init(delegate: self.socketProxy, delegateQueue: self.messageQueue)
     private lazy var socketProxy: SocketProxy = {
         let proxy = SocketProxy()
-        proxy.socketDidDisconnectCallback = { [unowned self] _, _ in
-            self.isWriting = false
+        proxy.socketDidDisconnectCallback = { [weak self] _, error in
+            guard let strongSelf = self else { return }
+            strongSelf.isWriting = false
+            if let error = error {
+                print("SocketLogger disconnected from \(strongSelf.host):\(strongSelf.port) \(error)")
+            } else {
+                print("SocketLogger disconnected from \(strongSelf.host):\(strongSelf.port)")
+            }
         }
-        proxy.socketDidWriteDataWithTagCallback = { [unowned self] _, tag in
-            guard tag == writerTag, self.isWriting else { return }
-            self.enqueuedLogs.removeFirst()
-            self.isWriting = false
-            self.writeLogs()
+        proxy.socketDidConnectToHostCallback = { [weak self] _, _, _ in
+            guard let strongSelf = self else { return }
+            strongSelf.writeLogs()
+        }
+        proxy.socketDidWriteDataWithTagCallback = { [weak self] _, tag in
+            guard let strongSelf = self, tag == writerTag, strongSelf.isWriting else { return }
+            strongSelf.enqueuedLogs.removeFirst()
+            strongSelf.isWriting = false
+            strongSelf.writeLogs()
         }
         return proxy
     }()
-    private lazy var dateFormatter: DateFormatter = {
+    lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: posixLocaleID)
         formatter.timeZone = self.timeZone
@@ -185,22 +195,7 @@ public final class SocketLogger {
     }()
 }
 
-private final class SocketProxy: NSObject {
-    var socketDidDisconnectCallback: ((GCDAsyncSocket, Error?) -> Void)?
-    var socketDidWriteDataWithTagCallback: ((GCDAsyncSocket, Int) ->Void)?
-}
-
-extension SocketProxy: GCDAsyncSocketDelegate {
-    func socketDidDisconnect(_ socket: GCDAsyncSocket, withError error: Error?) {
-        socketDidDisconnectCallback?(socket, error)
-    }
-
-    func socket(_ socket: GCDAsyncSocket, didWriteDataWithTag tag: Int) {
-        socketDidWriteDataWithTagCallback?(socket, tag)
-    }
-}
-
-private extension SocketLogDetails {
+extension SocketLogDetails {
     func prefix(withFormatter dateFormatter: DateFormatter) -> String {
         let formattedPID: String = pid.flatMap(String.init) ?? "-"
         let formattedMessageID: String = messageID.flatMap(String.init) ?? "-"
@@ -216,7 +211,7 @@ private extension SocketLogger {
             enqueuedLogs.append(data)
         }
         if tcpSocket.isDisconnected {
-            connectToHost()
+            connect()
         } else if tcpSocket.isConnected {
             writeLogs()
         }
@@ -241,7 +236,7 @@ private extension SocketLogger {
         return "\(details.prefix(withFormatter: dateFormatter)) \(header) \(strippedMessage)\n"
     }
 
-    func connectToHost() {
+    func connect() {
         do {
             try tcpSocket.connect(toHost: host, onPort: UInt16(port))
             if isTLSEnabled {
