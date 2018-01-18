@@ -157,6 +157,7 @@ public final class SocketLogger {
         }
         proxy.socketDidWriteDataWithTagCallback = { [unowned self] _, tag in
             guard tag == writerTag, self.isWriting else { return }
+            self.enqueuedLogs.removeFirst()
             self.isWriting = false
             self.writeLogs()
         }
@@ -211,7 +212,6 @@ private extension SocketLogger {
     func writeLogs() {
         guard let msg = enqueuedLogs.first, tcpSocket.isConnected, !isWriting else { return }
         isWriting = true
-        enqueuedLogs.removeFirst()
         tcpSocket.write(msg, withTimeout: -1, tag: writerTag)
     }
 
