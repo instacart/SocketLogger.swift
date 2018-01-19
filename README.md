@@ -1,5 +1,7 @@
 # SocketLogger
 
+[![Build Status](https://travis-ci.com/instacart/SocketLogger.swift.svg?branch=master)](https://travis-ci.com/instacart/SocketLogger.swift)
+
 SocketLogger is a logging µlib compatible with any socket-based syslog
 service. Allows flexibility to choose between various logging providers while
 integrating with any logging framework of your choice (e.g.
@@ -13,6 +15,8 @@ SocketLogger is compatible with iOS 8+, macOS 10.10 and tvOS 9.
 Requires Swift 4.
 
 ## Installation
+
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) 
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
