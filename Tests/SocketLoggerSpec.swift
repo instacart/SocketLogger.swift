@@ -86,6 +86,6 @@ private extension CountableRange {
     var randomElement: Element {
         let distance = self.distance(from: startIndex, to: endIndex)
         let offset = arc4random_uniform(UInt32(distance))
-        return self[index(startIndex, offsetBy: Bound.Stride(offset))]
+        return self[index(startIndex, offsetBy: Int(offset))]
     }
 }
